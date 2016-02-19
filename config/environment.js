@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'tcc-direct',
     environment: environment,
     baseURL: '/',
+    apiHost: 'http://tcc-rl.dev:36016',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -17,6 +18,11 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    //authenticationRoute: 'user',
+    routeAfterAuthentication: 'protected'
   };
 
   if (environment === 'development') {

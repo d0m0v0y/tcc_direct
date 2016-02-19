@@ -1,0 +1,16 @@
+<h4> Login ID: {{model.loginId}}</h4>
+<h5>{{errorMessage}}</h5>
+<div class="col-xs-4">
+  {{#bs-form action="submit"}}
+    {{#bs-form-group}}
+      <label class="control-label">{{model.securityQuestion}}</label>
+      {{bs-input type="text" value=model.securityAnswer}}
+    {{/bs-form-group}}
+    {{#bs-form-group}}
+      <label class="control-label">Password</label>
+      {{bs-input type="password" value=model.password}}
+    {{/bs-form-group}}
+    {{bs-button defaultText="Login" type="primary" buttonType="submit"}}
+  {{/bs-form}}
+</div>
+

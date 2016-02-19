@@ -1,0 +1,32 @@
+<h5>Total: {{total}} records</h5>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Short Reference</th>
+        <th>Conversion Date</th>
+        <th>Settlement Date</th>
+        <th>Buy Currency</th>
+        <th>Buy Amount</th>
+        <th>Sell Currency</th>
+        <th>Sell Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each model as |conversion|}}
+      <tr>
+          <td>{{#link-to "conversions.show" conversion}}{{conversion.id}}{{/link-to}}</td>
+          <td>{{conversion.shortReference}}</td>
+          <td>{{conversion.conversionDate}}</td>
+          <td>{{conversion.settlementDate}}</td>
+          <td>{{conversion.buyCurrency}}</td>
+          <td>{{conversion.clientBuyAmount}}</td>
+          <td>{{conversion.sellCurrency}}</td>
+          <td>{{conversion.clientSellAmount}}</td>
+          <td>{{conversion.status}}</td>
+      </tr>
+    {{/each}}
+    </tbody>
+</table>
